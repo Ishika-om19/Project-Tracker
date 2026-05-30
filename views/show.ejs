@@ -1,0 +1,22 @@
+<% layout("/layouts/boilerplate") %>
+    <h1><%= user.name %>'s Projects</h1>
+    <% if(projects.length>0){ %>
+    <% for(let project of projects) { %>
+        <h2><%= project.title %></h2>
+        <p><%= project.description %></p>
+        <p>Status: <%= project.status %></p>
+        <a href="/projects/<%= project._id %>/edit">
+            <button>Edit</button>
+        </a>
+        <form action="/projects/<%= project._id %>?_method=DELETE" method="POST">
+            <button>Delete</button>
+        </form>
+        <hr>
+        <% } %>
+        <% } else { %>
+         <h3>No Projects Found</h3>
+         <% } %>
+
+         <form action="/users/<%= user._id %>/projects/new" method="GET">
+             <button type="submit">Create Project</button>
+         </form>

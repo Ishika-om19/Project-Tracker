@@ -1,0 +1,24 @@
+<% layout("/layouts/boilerplate") %>
+
+    <form action="/users/<%= user._id %>/projects" method="POST">
+
+        <h1>Add New Project for <%= user.name %></h1>
+        <label for="title">Title:</label>
+        <input type="text" id="title" name="title" ><br><br>
+
+        <label for="description">Description:</label><br>
+        <textarea id="description" name="description" rows="4" cols="50"></textarea><br><br>
+
+        <label for="status">Status:</label>
+        <select id="status" name="status">
+            <option value="Pending">Pending</option>
+            <option value="In Progress">In Progress</option>
+            <option value="Completed">Completed</option>
+        </select><br><br>
+        <label for="startDate">Start Date:</label>
+        <input type="date" name="startDate"><br><br>
+        <label for="endDate">End Date:</label>
+        <input type="date" name="endDate"><br><br>
+        
+        <button type="submit">Create Project</button>  
+    </form>
