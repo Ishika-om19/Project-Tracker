@@ -1,17 +1,14 @@
-.container{
-    flex:1;
-}
-
 body{
     display:flex;
     flex-direction: column;
     min-height: 100vh;
+    background-color: #f5f3ff!important;
 }
 
 /* Navbar Styles */
 .navbar{
     height: 5rem !important;
-    background-color:#362b89;
+    background-color:#2a1b9a;
 }
 
 .fa-folder-open{
@@ -113,5 +110,9 @@ hr{
     font-weight: bold;
     justify-content: center;
     font-size: 1.5rem;
+    border: none;
+}
 
+.container{
+    flex:1;
 }

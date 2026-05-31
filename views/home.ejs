@@ -13,39 +13,15 @@
                     </div>
                     <div>
                     <h5 class="card-title"><%= user.name %></h5>
-                    <p class="card-text">Email: <%= user.email %></p>g
+                    <p class="card-text">Email: <%= user.email %></p>
                   </div>
                 </div>
                 <hr>
-     <a href="/users/<%= user._id %>" class="card-link">View Details</a>
-    <a href="/users/<%= user._id %>/projects" class="card-link">Add Project</a>
+     <a href="/users/<%= user._id %>" class="btn btn-primary btn-sm">View Details</a>
+    <a href="/users/<%= user._id %>/projects" class="btn btn-success btn-sm">Add Project</a>
               </div>
             </div>
             </div>
           <% } %>
         </div>
 </div>
-
-    
-  <!-- <h1>Project Tracking System</h1>
-        <h3>All Users</h3>
-        <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
-<% for(let user of allUsers){ %>
-<div class="card col" style="width: 18rem;">
-  <div class="card-body">
-    <div class="user-info">
-    <div class="card-img">
-      <%= user.name.charAt(0).toUpperCase() %>
-     </div>
-
-    <h5 class="card-title"> <%= user.name %></h5>
-    <p class="card-text">Email: <%= user.email %></p>
- </div>
- 
-    <hr>
-    <a href="/users/<%= user._id %>" class="card-link">View Details</a>
-    <a href="#" class="card-link">Another link</a>
-  <% } %>
-      </div>
-</div>
-        </div>  -->
