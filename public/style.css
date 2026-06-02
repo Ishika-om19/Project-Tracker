@@ -116,3 +116,12 @@ hr{
 .container{
     flex:1;
 }
+
+.card-body{
+    opacity: 1;
+}
+
+.card-body:hover{
+    opacity: 0.5;
+    background-color: white;
+}
