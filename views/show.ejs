@@ -1,22 +1,42 @@
 <% layout("/layouts/boilerplate") %>
-    <h1><%= user.name %>'s Projects</h1>
+<div class="show-page">
+<div class="container">
+    <div>
+    <h1 class="project-heading"><%= user.name %>'s Projects</h1>
+    <p  class="text-muted"> Total Projects: <%= projects.length %></p>
+    </div>
+</div>
     <% if(projects.length>0){ %>
     <% for(let project of projects) { %>
-        <h2><%= project.title %></h2>
-        <p><%= project.description %></p>
-        <p>Status: <%= project.status %></p>
-        <a href="/projects/<%= project._id %>/edit">
-            <button>Edit</button>
-        </a>
-        <form action="/projects/<%= project._id %>?_method=DELETE" method="POST">
-            <button>Delete</button>
+        <div class="card shadow-sm mb-3">
+        <div class="card-body">
+        <h2 class="card-title"><%= project.title %></h2>
+        <p>Start:<% project.startDate %></p>
+         <p>End:<% project.endDate %></p>
+         <% if(project.status === "Completed") { %>
+            <span class="badge bg-success">Completed</span>
+            <% } else if (project.status === "In Progress") { %>
+                <span class="badge bg-primary">In Progress</span>
+                <% } else { %>
+                    <span class="badge bg-warning text-dark">Pending</span>
+                    <% } %>
+          <hr>
+        <p class="card-text"><%= project.description %></p>
+       
+                    <div class="mt-3">
+        <a href="/projects/<%= project._id %>/edit"  class="btn "> <button class="btn btn-outline-primary btn-sm">Edit</button> </a>
+        <form action="/projects/<%= project._id %>?_method=DELETE" method="POST" class="d-inline">
+            <button class="btn btn-danger btn-sm">Delete</button>
         </form>
-        <hr>
+        </div>
+        </div>
+    </div>
         <% } %>
         <% } else { %>
-         <h3>No Projects Found</h3>
+            <div class="alert alert-danger">No projects found. Create your first project!</div>
          <% } %>
-
+      
          <form action="/users/<%= user._id %>/projects/new" method="GET">
-             <button type="submit">Create Project</button>
+             <button type="submit" class="btn btn-primary create-btn">Create Project</button>
          </form>
+         </div>

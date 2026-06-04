@@ -1,19 +1,36 @@
 <% layout("/layouts/boilerplate") %>
-    <h1>Edit Project</h1>
+<div class="container">
+    <div class="card shadow p-4">
+    <h2 class="mb-4">Edit Project</h2>
     <form action="/projects/<%= project._id %>?_method=PUT" method="POST">
-
-        <label for="title">Title:</label>
+<div class="mb-3">
+        <label for="title"> Project Title:</label>
         <input type="text" id="title" name="title" value="<%= project.title %>"><br><br>
-
+</div>
+<div class="mb-3">
         <label for="description">Description:</label><br>
         <textarea id="description" name="description" rows="4" cols="50"><%= project.description %></textarea><br><br>
-
+</div>
+<div class="mb-3">
         <label for="status">Status:</label>
         <select id="status" name="status">
-            <option value="Pending" >Pending</option>
-            <option value="In Progress" >In Progress</option>
-            <option value="Completed">Completed</option>
-        </select><br><br>
-        <button type="submit">Update Project</button>
+            <option value="Pending" <%= project.status==="Pending"?"selected":"" %>>Pending</option>
+            <option value="In Progress" <%= project.status==="In Progress"?"selected":""  %>>In Progress</option>
+            <option value="Completed" <%= project.status==="Completed"?"selected":"" %>>Completed</option>
+        </select>
+        </div>
+        <div class="mb-3">
+        <label for="startDate">Start Date:</label>
+        <input type="date" name="startDate" value="<%= project.startDate? project.startDate.toISOString().split('T')[0]:''%>">
+        </div>
+        <div class="mb-3">
+        <label for="endDate">End Date:</label>
+        <input type="date" name="endDate" value="<%= project.endDate? project.endDate.toISOString().split('T')[0]:'' %>">
+        </div>
 
+        <button type="submit" class="btn btn-primary">Update Project</button>
+        <a href="/users/<%=project.user%>" class="btn btn-secondary">Cancel</a>
     </form>
+    
+</div>
+</div>
