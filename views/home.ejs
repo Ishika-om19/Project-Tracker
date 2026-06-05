@@ -1,6 +1,6 @@
 <% layout("/layouts/boilerplate") %>
 <div class="container">
-    <h1>Project Tracking System</h1>
+    <h1 class="project-heading">Project Tracking System</h1>
         <h3>All Users</h3>
         <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
           <% for(let user of allUsers){ %>
@@ -18,7 +18,7 @@
                 </div>
                 <hr>
      <a href="/users/<%= user._id %>" class="btn btn-primary btn-sm">View Details</a>
-    <a href="/users/<%= user._id %>/projects" class="btn btn-success btn-sm">Add Project</a>
+    <a href="/users/<%= user._id %>/projects/new" class="btn btn-success btn-sm">Add Project</a>
               </div>
             </div>
             </div>

@@ -36,7 +36,7 @@ app.get("/users", async(req,res)=>{
 });
 
 app.get("/users/new",(req,res)=>{
-    res.render("signup.ejs");
+    res.render("creuser.ejs");
 });
 
 app.post("/users", async(req, res)=>{
@@ -87,28 +87,6 @@ app.get("/users/:id", async(req, res)=>{
     const projects = await Project.find({owner:id});
     res.render("show.ejs",{user, projects});
 });
-
-// app.get("/createProject", async(req,res)=>{
-//     let newProject = new Project({
-//         title: "Tracking System",
-//         description: "Full stack project",
-//         startDate: new Date(),
-//         endDate: new Date("2026-12-31"),
-//         status: "In Progress",
-//     });
-//     await newProject.save();;
-//     res.send("Project created successfully");
-// });
-
-// app.get("/testUser", async (req,res)=>{
-//     let sampleUser= new User({
-//         name:"Ishika",
-//         email:"ishika@gmail.com",
-//         password:"12345"
-//     });
-//     await sampleUser.save();
-//     res.send("User saved successfully");
-// });
 app.listen(8080,()=>{
     console.log("server is listening to port 8080");
 });

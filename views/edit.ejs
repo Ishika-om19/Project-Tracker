@@ -4,28 +4,28 @@
     <h2 class="mb-4">Edit Project</h2>
     <form action="/projects/<%= project._id %>?_method=PUT" method="POST">
 <div class="mb-3">
-        <label for="title"> Project Title:</label>
-        <input type="text" id="title" name="title" value="<%= project.title %>"><br><br>
+        <label for="title" class="form-label"> Project Title:</label>
+        <input type="text" id="title" name="title" class="form-control" value="<%= project.title %>">
 </div>
 <div class="mb-3">
-        <label for="description">Description:</label><br>
-        <textarea id="description" name="description" rows="4" cols="50"><%= project.description %></textarea><br><br>
+        <label for="description" class="form-label">Description:</label>
+        <textarea id="description" name="description" class="form-control" rows="4" cols="50"><%= project.description %></textarea>
 </div>
 <div class="mb-3">
-        <label for="status">Status:</label>
-        <select id="status" name="status">
+        <label for="status" class="form-label">Status:</label>
+        <select id="status" name="status" class="form-control">
             <option value="Pending" <%= project.status==="Pending"?"selected":"" %>>Pending</option>
             <option value="In Progress" <%= project.status==="In Progress"?"selected":""  %>>In Progress</option>
             <option value="Completed" <%= project.status==="Completed"?"selected":"" %>>Completed</option>
         </select>
         </div>
         <div class="mb-3">
-        <label for="startDate">Start Date:</label>
-        <input type="date" name="startDate" value="<%= project.startDate? project.startDate.toISOString().split('T')[0]:''%>">
+        <label for="startDate" class="form-label">Start Date:</label>
+        <input type="date" name="startDate" class="form-control" value="<%= project.startDate? project.startDate.toISOString().split('T')[0]:''%>">
         </div>
         <div class="mb-3">
-        <label for="endDate">End Date:</label>
-        <input type="date" name="endDate" value="<%= project.endDate? project.endDate.toISOString().split('T')[0]:'' %>">
+        <label for="endDate" class="form-label">End Date:</label>
+        <input type="date" name="endDate" class="form-control" value="<%= project.endDate? project.endDate.toISOString().split('T')[0]:'' %>">
         </div>
 
         <button type="submit" class="btn btn-primary">Update Project</button>
