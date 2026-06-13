@@ -17,8 +17,12 @@
                   </div>
                 </div>
                 <hr>
+    <div class="del">
      <a href="/users/<%= user._id %>" class="btn btn-primary btn-sm">View Details</a>
-    <a href="/users/<%= user._id %>/projects/new" class="btn btn-success btn-sm">Add Project</a>
+     <form action="/users/<%= user._id %>?_method=DELETE" method="POST">
+    <button class="btn btn-danger btn-sm">Delete user</button>
+    </form>
+    </div>
               </div>
             </div>
             </div>

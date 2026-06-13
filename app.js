@@ -73,6 +73,13 @@ app.delete("/projects/:projectId", async(req, res)=>{
     res.redirect(`/users/${userId}`);
 });
 
+app.delete("/users/:id", async(req,res)=>{
+    const userId= req.params.id;
+    await Project.deleteMany({owner:userId});
+    await User.findByIdAndDelete(userId);
+    res.redirect("/users");
+});
+
 app.put("/projects/:projectId", async(req, res)=>{
     let{projectId} = req.params;
     const project = await Project.findById(projectId);
