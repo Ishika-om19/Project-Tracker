@@ -11,8 +11,8 @@
         <div class="card shadow-sm mb-3">
         <div class="card-body">
         <h2 class="card-title"><%= project.title %></h2>
-        <p>Start:<% project.startDate %></p>
-         <p>End:<% project.endDate %></p>
+        <p>Start Date:<%= project.startDate.toLocaleDateString() %></p>
+         <p>End Date:<%= project.endDate.toLocaleDateString() %></p>
          <% if(project.status === "Completed") { %>
             <span class="badge bg-success">Completed</span>
             <% } else if (project.status === "In Progress") { %>

@@ -5,8 +5,12 @@ const Schema = mongoose.Schema;
 const projectSchema = new Schema({
     title: String,
     description: String,
-    startDate: Date,
-    endDate: Date,
+    startDate: {
+        type:Date
+    },
+    endDate: {
+        type:Date
+    },
     status: String,
     teammembers: [String],
     owner:{

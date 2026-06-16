@@ -2,18 +2,18 @@
 <div class="container">
     <div class="card shadow p-4">
     <h2 class="mb-4">Create New Project for <%= user.name %></h2>
-    <form action="/users/<%= user._id %>/projects" method="POST">
+    <form action="/users/<%= user._id %>/projects" method="POST" class="needs-validation" novalidate >
 <div class="mb-3">
         <label for="title" class="form-label">Title:</label>
-        <input type="text" id="title" name="title" class="form-control">
+        <input type="text" id="title" name="title" class="form-control" required>
         </div>
 <div class="mb-3">
         <label for="description" class="form-label">Description:</label>
-        <textarea id="description" name="description" class="form-control" rows="4" cols="50"></textarea>
+        <textarea id="description" name="description" class="form-control" rows="4" cols="50" required></textarea>
         </div>
 <div class="mb-3">
         <label for="status" class="form-label">Status:</label>
-        <select id="status" name="status" class="form-control">
+        <select id="status" name="status" class="form-control" required>
             <option value="Pending">Pending</option>
             <option value="In Progress">In Progress</option>
             <option value="Completed">Completed</option>
@@ -21,11 +21,11 @@
         </div>
 <div class="mb-3">
         <label for="startDate" class="form-label">Start Date:</label>
-        <input type="date" name="startDate" class="form-control">
+        <input type="date" name="startDate" class="form-control" required>
         </div>
 <div class="mb-3">
-        <label for="endDate" class="form-label">End Date:</label>
-        <input type="date" name="endDate" class="form-control">
+        <label for="endDate" class="form-label" >End Date:</label>
+        <input type="date" name="endDate" class="form-control" required>
         </div>
         
         <button type="submit" class="btn btn-warning">Create Project</button>
