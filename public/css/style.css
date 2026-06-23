@@ -34,7 +34,7 @@ body{
 
 hr{
    border-color: white;
-}
+} 
 
 .f-info{
     display:flex;
@@ -118,8 +118,9 @@ hr{
 }
 
 .show-page{
-    padding: 1.5rem;
+    padding: 30px 0;
     background-color: #e3e0ec;
+    min-height: 100vh;
 }
 
 .card-title , .project-heading{
@@ -151,3 +152,23 @@ hr{
     display: flex;
    
 }
+
+.project-card{
+    border: none;
+    border-radius: 15px;
+    transition: 0.3s;
+    overflow: hidden;
+}
+
+.project-card:hover{
+    transform: translateY(-4px);
+}
+
+.card-text{
+    line-height: 1.7;
+}
+
+.btn-sm{
+    border-radius: 8px;
+}
+
